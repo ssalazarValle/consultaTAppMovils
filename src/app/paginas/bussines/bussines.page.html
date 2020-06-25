@@ -1,0 +1,17 @@
+<ion-content fullscreen="true" scrollY="false">
+  <app-timer></app-timer>
+
+  <div *ngFor="let empresa of empresas" class="content-data">
+    <div>
+        {{ empresa.title }}
+    </div>
+    <div class="content-select">
+      <ion-label> {{ empresa.subtitle }} </ion-label>
+      <ion-select>
+        <ion-select-option *ngFor="let contenido of empresa.content" >
+          {{ contenido.empresa }}
+        </ion-select-option>
+      </ion-select>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic infinite scroll
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div  >
+    <p>Esto es un elemento de prueba</p>
+
+    <ion-list>
+      <ion-card *ngFor="let card of cards">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="4">
+              <div class="content-img-status" *ngIf="card.status === 'Activo'">
+                <img
+                  class="img-staus"
+                  src="../../../assets/external/home/register.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                class="content-img-status"
+                *ngIf="card.status === 'Cancelado'"
+              >
+                <img
+                  class="img-staus"
+                  src="../../../assets/external/home/files-and-folders.svg"
+                  alt=""
+                />
+              </div>
+            </ion-col>
+            <ion-col size="8">
+              <div class="content-card-data">
+                <p class="rfc-card">{{ card.rfc }}</p>
+                <p class="date-card">{{ card.date }}</p>
+                <p
+                  [ngClass]="{
+                 'status-card-true':card.status === 'Activo',
+                 'status-card-false': card.status === 'Cancelado'
+                }"
+                >
+                  {{ card.status }}
+                </p>
+                <p class="ammount-card">{{ card.ammount }}</p>
+                <div class="content-series">
+                  <p>Serie: {{ card.serie }}</p>
+                  <p>Folio: {{ card.folio }}</p>
+                  <img [src]="card.img" alt="" />
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+
+    </ion-list>
+  
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>

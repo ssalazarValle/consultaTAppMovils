@@ -1,0 +1,104 @@
+<ion-content fullscreen="true" scrollY="false">
+  <!-- <ion-content fullscreen="true"> -->
+  <ion-toolbar>
+    <div class="grecas">
+      <img
+        class="logo-header"
+        src="../../../assets/external/header/logo-fx-blanco.svg"
+        alt=""
+      />
+      <ion-buttons slot="end">
+        <ion-menu-button class="content-button-menu">
+          <img
+            class="icon-menu"
+            src="../../../assets/external/menu/open-menu.svg"
+            alt=""
+          />
+        </ion-menu-button>
+      </ion-buttons>
+    </div>
+    <div class="data-client">
+      <ion-icon class="user" name="person-outline"></ion-icon>
+      <p class="user-name">José Manuel López G.</p>
+      <p class="job-name">Empresa pruebas SA de CV</p>
+    </div>
+  </ion-toolbar>
+
+  <div class="content-tooltip">
+    <div class="tool-tip" *ngFor="let filter of filtersUser">
+      <p>{{ filter.value }}</p>
+      <ion-icon
+        name="close-outline"
+        (click)="closeFilter(filter.value, filter.formControl)"
+      ></ion-icon>
+    </div>
+  </div>
+
+  <div class="content-content">
+    <div class="content-cards">
+      <ion-card *ngFor="let card of cardsContent">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="4" (click)="gotDetail(card, card.xMLCFDI)">
+              <div class="content-img-status" *ngIf="card.estatusCfdi === 1 ">
+                <img
+                  class="img-staus"
+                  src="../../../assets/external/home/register.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                class="content-img-status"
+                *ngIf="card.estatusCfdi === 0"
+              >
+                <img
+                  class="img-staus"
+                  src="../../../assets/external/home/files-and-folders.svg"
+                  alt=""
+                />
+              </div>
+            </ion-col>
+            <ion-col size="8">
+              <div class="content-card-data">
+                <p class="rfc-card">{{ card.rfcreceptor }}</p>
+                <p class="date-card">{{ card.fechaTimbrado }}</p>
+                <p
+                  [ngClass]="{
+                 'status-card-true':card.estatusCfdi === 1,
+                 'status-card-false': card.estatusCfdi === 0
+                }"
+                >
+                  {{ card.estatusCfdi === 1 ? 'Activo' : 'Cancelado' }}
+                </p>
+                <p class="ammount-card">$ {{ card.total }}</p>
+                <div class="content-series">
+                  <p>Serie: {{ card.serie }}</p>
+                  <p>Folio: {{ card.folio }}</p>
+                  <img src="../../../assets/external/home/document-pdf.svg" alt="" (click)="openModal(card.folioFiscal)" />
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col
+          *ngFor="let filtro of filtros"
+          (click)="goToAction(filtro.url)"
+        >
+          <div class="content-filters">
+            <img [src]="filtro.imag" [alt]="filtro.title" />
+            <p>{{ filtro.title }}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

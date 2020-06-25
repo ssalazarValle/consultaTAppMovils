@@ -1,0 +1,84 @@
+* {
+  margin: 20;
+  padding: 10;
+
+  > p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+ion-picker {
+  touch-action: none;
+}
+
+:root {
+  ion-backdrop {
+   opacity: 0.5 !important;
+ }
+}
+
+ion-label {
+  font-size: 12px;
+}
+
+
+.modal-descarga, .modal-wrapper {
+  margin: auto;
+  --border-radius: 12px;
+  --backdrop-opacity: black;
+  --background: black;
+  --width: 90%;
+  --height: 35%;
+}
+
+.modal-error, .modal-wrapper {
+  margin: auto;
+  --border-radius: 12px;
+  --backdrop-opacity: black;
+  --background: black;
+  --width: 90%;
+  --height: 25%;
+}
+
+ion-label {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+
+ion-item {
+  --inner-padding-end: 10px !important;
+  --padding-start: 10px !important;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 100%;
+  @include respond(tab-land) {
+    font-size: 100%;
+  }
+
+  @include respond(phone) {
+    font-size: 100%;
+  }
+
+  @include respond(smallphone) {
+    font-size: 9%;
+  }
+
+  @include respond(tab-land) {
+    font-size: 102%;
+  }
+
+  @include respond(desktop) {
+    font-size: 100%;
+  }
+}
+
+
+/* Contenedores  */
+app-user,app-bussines {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+

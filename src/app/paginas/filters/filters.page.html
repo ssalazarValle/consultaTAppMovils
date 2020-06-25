@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="content-title">
+      <img
+        class="img-title"
+        src="../../../assets/external/header/filter.svg"
+        alt=""
+      />
+      <ion-title>Filtros</ion-title>
+      <ion-label class="button-cerrar" (click)="setFilters()">Aplicar</ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form [formGroup]="filtersForm">
+    <div class="content-filtes">
+      <div class="content-tooltip">
+        <div class="tool-tip" *ngFor="let filter of arrayFilters"  >
+          <p> {{ filter.value }} </p>
+          <ion-icon name="close-outline" (click)="closeFilter(filter.value, filter.formControl)" ></ion-icon>
+        </div>
+      </div>
+      <ion-list>
+        <p>Nota: Campos Requeridos *</p>
+        <ion-item>
+          <ion-label>* Estatus Comprobante</ion-label>
+          <ion-select  formControlName="statusFactura"
+          (ionChange)="onChange('statusFactura')"
+          >
+            <ion-select-option *ngFor="let estatus of estatusFacturas" [value]="estatus.value" >
+              {{estatus.status}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>* Versión de CDFI</ion-label>
+          <ion-select  formControlName="versionFactura"
+          (ionChange)="onChange('versionFactura')"
+          >
+            <ion-select-option *ngFor="let version of versionFactura">
+              {{version.version}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <div class="content-filters">
+            <ion-label>* Fecha Timbrado Inicial</ion-label>
+            <ion-datetime
+            (ionChange)="onChange('fecha')"
+              formControlName="fecha"
+              displayFormat="DD/MM/YYYY"
+              min="1974-03-14"
+            ></ion-datetime>
+          </div>
+        </ion-item>
+        <ion-item>
+          <div class="content-filters">
+            <ion-label>* Fecha Timbrado Final</ion-label>
+            <ion-datetime
+            (ionChange)="onChange('fechaFinal')"
+              formControlName="fechaFinal"
+              displayFormat="DD/MM/YYYY"
+              min="1974-03-14"
+            ></ion-datetime>
+          </div>
+        </ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let inputs of  inputsData" [size]="inputs.size">
+              <ion-item>
+                <ion-label class="labels-filters" position="stacked"> {{ inputs.label }} </ion-label>
+                <ion-input
+                class="controls-input"
+                [formControlName]="inputs.controlName"
+                [placeholder]="inputs.placeholder"
+                (ionBlur)="onChange(inputs.controlName)"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+    </div>
+  </form>
+</ion-content>

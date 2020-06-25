@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="content-title">
+      <img
+        class="img-title"
+        src="../../../assets/external/header/checklist.svg"
+        alt=""
+      />
+      <ion-title>Detalle</ion-title>
+      <ion-label class="button-cerrar" (click)="closeDetail()"
+        >Cerrar</ion-label
+      >
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen class="content-general">
+  <ion-list *ngFor="let detail of details">
+    <ion-label class="title-component"> Comprobante </ion-label>
+    <ion-item>
+      <ion-label position="stacked" class="ion-text-wrap">
+        Folio Fiscal
+      </ion-label>
+      <p>
+        {{ detail.folioFiscal }}
+      </p>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" class="ion-text-wrap">
+        Fecha Timbrado
+      </ion-label>
+      <p>
+        {{ detail.fechaTimbrado }}
+      </p>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" class="ion-text-wrap">
+        RFC Emisor
+      </ion-label>
+      <p>
+        {{ detail.rfcemisor }}
+      </p>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" class="ion-text-wrap">
+        Total
+      </ion-label>
+      <p>
+        $ {{ detail.total }}
+      </p>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" class="ion-text-wrap">
+        Estatus SAT
+      </ion-label>
+      <p>
+        {{ detail.estatusCfdi === 1 ? 'Activo' : 'Cancelado' }}
+      </p>
+    </ion-item>
+  </ion-list>
+  <div class="content-receptor">
+    <ion-list *ngFor="let userData of details">
+      <ion-label class="title-component">Receptor</ion-label>
+      <ion-item>
+        <ion-label position="stacked" class="ion-text-wrap">
+          Nombre
+        </ion-label>
+        <p>
+          {{ userData['xMLCFDI'].nombre }}
+        </p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" class="ion-text-wrap">
+          RFC Receptor
+        </ion-label>
+        <p>
+          {{ userData.rfcreceptor }}
+        </p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" class="ion-text-wrap">
+          CURP
+        </ion-label>
+        <p>
+          {{ userData['xMLCFDI'].curp }}
+        </p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" class="ion-text-wrap">
+          Número Empleado
+        </ion-label>
+        <p>
+          {{ userData['xMLCFDI'].numeroEmpleado }}
+        </p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

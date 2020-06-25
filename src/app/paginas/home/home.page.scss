@@ -1,0 +1,231 @@
+.content-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  margin: auto;
+  padding: auto;
+}
+.content-button-menu {
+  height: 80px;
+
+  @media only screen and (min-device-width: 750px) {
+    height: 90px;
+  }
+
+  .icon-menu {
+    position: relative;
+    width: 100%;
+    right: 2px;
+
+    @media only screen and (min-device-width: 750px) {
+        width: 10%;
+        left: 190px;            
+    }
+  }
+}
+
+ion-grid {
+  padding: 0px !important;
+}
+
+.grecas {
+  background-image: url("../../../assets/external/rect-ngulo-1.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 165px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  > .logo-header {
+    margin-top: 20px;
+    width: 30%;
+    height: 30%;
+  }
+}
+
+.data-client {
+  margin-top: -110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  > .user-name {
+    font-size: 16px;
+    color: #000000;
+  }
+
+  > .job-name {
+    font-size: 12px;
+    color: #888888;
+  }
+
+  > .user {
+    padding: 4%;
+    border-radius: 100%;
+    width: 19vw;
+    height: 10vh;
+    box-shadow: 0px 4px 9px 0 rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+
+    @media only screen and (min-device-width: 750px) {
+      width: 14vw;
+      height: 9vh;
+    }
+  }
+}
+
+.container-inputs {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  margin: auto;
+  flex-direction: column;
+
+  ion-item {
+    width: 45%;
+  }
+
+  ion-input {
+    width: 45%;
+  }
+}
+
+ion-card {
+  padding: 5px !important;
+  margin: 10px !important;
+}
+
+.content-content {
+  overflow-y: auto;
+  height: 45vh;
+  margin: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  
+  > .content-cards {
+    width: 100%;
+  }
+}
+
+.content-img-status {
+  margin: 18% 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > .img-staus {
+    width: 85%;
+    height: 85%;
+  }
+
+  @media only screen and (min-device-width: 750px) {
+    width: 75%;
+    height: 75%;
+  }
+}
+
+ion-toolbar {
+  --padding-top: 0px !important;
+  --padding-start: 0px !important;
+  --padding-end: 0px !important;
+}
+
+.content-card-data {
+  > .rfc-card {
+    font-size: 16px;
+    color: #010101;
+  }
+
+  > .date-card {
+    font-size: 10px;
+    color: #929292;
+  }
+
+  > .status-card-true {
+    font-size: 9px;
+    color: #29afe1;
+  }
+
+  > .status-card-false {
+    font-size: 9px;
+    color: red;
+  }
+
+  > .ammount-card {
+    font-size: 13px;
+    color: #929292;
+  }
+
+  > .content-series {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    > p {
+      font-size: 12px;
+      color: #929292;
+    }
+
+    > img {
+      width: 70px;
+      height: 60px;
+    }
+  }
+}
+
+.content-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  > img {
+    width: 25px;
+    height: 25px;
+  }
+
+  > p {
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #28a1d9;
+  }
+}
+
+.content-tooltip {
+  overflow: auto;
+  white-space: nowrap;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.tool-tip {
+  width: fit-content;
+  border-radius: 15.3px;
+  padding: 2%;
+  background-color: #d8d8d8;
+  margin: 3% 2%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+
+  p {
+    font-size: 14px;
+    margin: 0% 3%;
+  }
+
+  ion-icon {
+    font-size: 25px;
+    margin-left: 10px;
+  }
+}

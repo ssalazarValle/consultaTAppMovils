@@ -1,0 +1,54 @@
+:root {
+  --ion-safe-area-top: 20px;
+  --ion-safe-area-bottom: 22px;
+}
+
+ion-title {
+  padding-left: 0px;
+  font-size: 25px;
+  color: #29a5dd;
+}
+
+
+.content-receptor {
+  margin-top: 27px;
+}
+
+.img-title {
+  margin-left: 2%;
+  width: 15%;
+  height: 10%;
+}
+
+.content-general {
+  p {
+    color: #b6b6b6;
+    font-size: 11px; 
+  }
+}
+
+.button-cerrar {
+  font-size: 14px;
+  color: #b6b6b6;
+}
+
+.content-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+
+  ion-label {
+    margin-right: 4%;
+  }
+}
+
+.title-component {
+  margin-left: 15px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+p {
+  font-size: 11px;
+}

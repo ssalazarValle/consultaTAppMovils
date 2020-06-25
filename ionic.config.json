@@ -1,0 +1,8 @@
+{
+  "name": "ConsultaTApp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

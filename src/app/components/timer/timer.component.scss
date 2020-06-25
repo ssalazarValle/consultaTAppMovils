@@ -1,0 +1,13 @@
+.contetnt-header {
+    padding-top: 23px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+
+    h1 {
+        border: 1px solid black;
+        padding: 5px;
+        margin: 1px;
+    }
+}

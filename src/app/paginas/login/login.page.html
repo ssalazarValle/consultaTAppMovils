@@ -1,0 +1,70 @@
+<ion-content [fullscreen]="true" scrollY="false">
+  <div class="fondo">
+    <div class="grecas">
+      <img src="../../../assets/external/fx-blanco-nube-84@3x.png" alt="" />
+    </div>
+    <div class="form">
+      <div class="loginPage">
+        <p class="text-title">Consulta-T</p>
+
+        <form [formGroup]="loginForm">
+          <ion-list class="userForm">
+            <ion-item lines="none" class="userInputs">
+              <ion-icon name="person-outline" class="incons-input"></ion-icon>
+              <ion-input
+                formControlName="user"
+                type="email"
+                placeholder="Usuario"
+                maxlength="50"
+                class="normalTransformInput"
+              >
+              </ion-input>
+            </ion-item>
+
+            <ion-item lines="none" class="userInputs">
+              <ion-icon
+                [name]="iconEye"
+                class="incons-input"
+                (click)="showPassword()"
+              ></ion-icon>
+              <ion-input
+                formControlName="password"
+                [type]="typeInputPassword"
+                placeholder="Contraseña"
+                (ionChange)="checkPassword()"
+                clearOnEdit="false"
+                maxlength="50"
+                class="normalTransformInput"
+              >
+              </ion-input>
+              <!--                 <ion-icon
+                  class="eye"
+                  [name]="iconEye"
+                  (click)="showPassword()"
+                ></ion-icon> -->
+            </ion-item>
+          </ion-list>
+        </form>
+      </div>
+
+      <div class="userFormButtons">
+        <ion-button
+          expand="block"
+          color="primary"
+          (click)="login()"
+          class="loginButton"
+          >Entrar</ion-button
+        >
+        <div class="text-error" *ngIf="errorLogin">
+          <ion-text> {{ errorLogin }} </ion-text>
+        </div>
+        <div class="userFormButtons content-buttons">
+          <ion-text class="textNone" (click)="changePassword()">¿Olvidaste tu contraseña?</ion-text>
+          <!-- <ion-button color="primary" (click)="regirtro()" class="loginButton">
+            Regístrate
+          </ion-button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
